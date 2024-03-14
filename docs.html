@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="docstyles.css" />
+  </head>
+  <body>
+    <nav>
+      <h0>A/B TESTING</h0>
+    </nav>
+
+    <div class="section">
+      <h1><sup>00</sup> Intro</h1>
+      <div class="content">
+        <p>
+          The A/B Testing assignment involved using a website version A,
+          modifying some parts of it in a version B to make improvements to the
+          user flow, and then having participants test both version A and B to
+          generate data about whether the changes made to B were successful.
+          Given metrics like number of misclicks made, time spent on page, and
+          amount of mouse movement, we could then analyze the data with various
+          statistical analyses to see whether version B truly performed better
+          in terms of allowing users to misclick less often and thus spend less
+          time on the page and move their cursor around less.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h1><sup>01</sup> Changing the Webpage</h1>
+      <div class="content">
+        <p>
+          After using version A, I decided to restructure the page content so it
+          would hopefully be easier to get a sense of the visual hierarchy with
+          a more diverse set of font sizes and colors. Additionally, I also
+          changed the color coding of the buttons to draw the users' eyes to the
+          "Schedule Appointment" button, which is the one that the task required
+          them to click.
+        </p>
+        <img
+          alt="Screenshot"
+          src="media/Screenshot 2024-03-14 at 10.36.22 AM.png"
+        />
+      </div>
+    </div>
+
+    <div class="section">
+      <h1><sup>02</sup> Metric of Choice</h1>
+      <div class="content">
+        <p>
+          In addition to two assigned metrics (time spent on page and whether
+          the user misclicked while trying to accomplish the task) to analyze
+          for our A/B testing, I chose mouse movement as my third, since it can
+          indicate where the user might be scanning or how confused they might
+          be depending on how much they move their mouse around on the page.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h1><sup>03</sup> Hypotheses</h1>
+
+      <div class="content">
+        <p>
+          Given these three metrics, I created pairs of null and alternate
+          hypotheses to predict what the results would be if we compared version
+          A with version B.
+        </p>
+        <div class="three-up">
+          <div>
+            <h2><sup>01</sup> Misclick Rate</h2>
+            <p>
+              <b>H<sub>0</sub>:</b> There is no difference between the
+              frequencies with which users click something else on the page
+              before finding the correct button for the task in version A and
+              version B.
+
+              <br /><br />
+
+              <b>H<sub>A</sub>:</b> There is a lower frequency with which users
+              click something else on the page before finding the correct button
+              for the task in version B than there is in version A.
+
+              <br /><br />
+
+              <b>Reasoning for H<sub>A</sub>:</b> The alternative hypothesis is
+              based off of the design choice to make the “Make appointment”
+              buttons bolder than the "See appointment" button to draw users'
+              eye, so that users will misclick less often.
+
+              <br /><br />
+
+              <b>Prediction:</b> I predict that I will end up rejecting the null
+              hypothesis, since the purpose of the redesign was to make things
+              easier to find on the page; as such, this should make misclicking
+              less likely to happen if the design was successful.
+            </p>
+          </div>
+
+          <div>
+            <h2><sup>02</sup> Time Spent on Page</h2>
+            <p>
+              <b>H<sub>0</sub>:</b> Users using version A spend the same amount
+              of time on the webpage as those using version B.
+
+              <br /><br />
+
+              <b>H<sub>A</sub>:</b> Users using version A spend more time on the
+              webpage than those using version B.
+
+              <br /><br />
+
+              <b>Reasoning for H<sub>A</sub>:</b> The alternative hypothesis is
+              based off of the new structure of the page, with lines to break up
+              the sections and different font sizes/colors that should bring
+              more visual hierarchy into the page and make the user flow
+              quicker.
+
+              <br /><br />
+
+              <b>Prediction:</b> I predict that I will end up rejecting the null
+              hypothesis, since the point of the assignment was to make the
+              entire page more efficient and easier to navigate; as such, this
+              should make misclicking less likely to happen if the design was
+              successful.
+            </p>
+          </div>
+
+          <div>
+            <h2><sup>03</sup> Mouse Movement</h2>
+            <p>
+              <b>H<sub>0</sub>:</b> Users using version A tend to move their
+              cursor the same amount on the webpage as users using version B.
+
+              <br /><br />
+
+              <b>H<sub>A</sub>:</b> Users using version A tend to move their
+              cursor a different amount on the webpage compared to users using
+              version B.
+
+              <br /><br />
+
+              <b>Reasoning for H<sub>A</sub>:</b> The alternative hypothesis is
+              based off of Version B’s more linear content structure and
+              consistent but distinct style for different elements. Since the
+              layouts differ, there’s no way to predict which results in less
+              mouse movement, but we can still test to see if the layout changes
+              the way people scan the page.
+
+              <br /><br />
+
+              <b>Prediction:</b> I predict that I will end up rejecting the null
+              hypothesis since the new webpage should organize the information
+              in a way that’s easier to scan, which should allow users to move
+              their cursor around less before finding what they need to make the
+              appointment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h1><sup>04</sup> Statistical Analysis (Misclick Rate)</h1>
+      <div class="content">
+        <p>
+          For the misclick rate, I chose a chi<sup>2</sup> test with the two
+          categories being “misclicked” and “didn’t misclick,” since we are
+          really only measuring those two categories (based on true vs false)
+          rather than measuring something on a continuous scale.
+        </p>
+        <img
+          alt="Initial sketches"
+          src="media/Screenshot 2024-03-14 at 10.38.46 AM.png"
+        />
+        <p>
+          After looking at the data, I fail to reject the null hypothesis
+          because p > 0.05. We know this because our p-value is approximately
+          0.775, which is much larger than our alpha of 0.05 and thus is not
+          statistically significant. With a chi<sup>2</sup> value of about
+          0.081, however, we can see that the order of magnitude in terms of the
+          difference between the two samples is not too big. Lastly, our degrees
+          of freedom (1) mainly comes from there being two categories and two
+          samples that we compare.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h1><sup>05</sup> Statistical Analysis (Time Spent on Page)</h1>
+      <div class="content">
+        <p>
+          For time spent on page, I conducted a one-sided T test with A > B,
+          since we only want to know if A > B, not if A != B, and our data is
+          continuous.
+        </p>
+        <img
+          alt="Initial sketches"
+          src="media/Screenshot 2024-03-14 at 10.39.01 AM.png"
+        />
+        <p>
+          After the analysis, I found statistically significant evidence that
+          the alternative hypothesis is true because p <= 0.05. Our calculated
+          p-value was approximately 0.001, which is much smaller than our alpha
+          of 0.05 and is thus statistically significant. With a t-score of about
+          -3.628, we can see that the order of magnitude in terms of the
+          difference between the two samples is a sizable amount (though not
+          extreme), and our degrees of freedom of about 22.880 comes from there
+          being on average around 22-23 participants.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h1><sup>06</sup> Statistical Analysis (Mouse Movement)</h1>
+      <div class="content">
+        <p>
+          For mouse movement, I performed a two-sided T test with A != B, since
+          we’re only concerned with whether there’s a difference in mouse
+          movement on a continuous scale, not necessarily with whether that
+          difference is positive or negative.
+        </p>
+        <img
+          alt="Statistical analysis for mouse movement"
+          src="media/Screenshot 2024-03-14 at 10.38.52 AM.png"
+        />
+        <p>
+          After calculating our values, I found statistically significant
+          evidence that the alternative hypothesis is true because p <= 0.05.
+          Our calculated p-value was approximately 0.000, which is much smaller
+          than our alpha of 0.05 and is thus statistically significant. With a
+          t-score of about -4.221, we can see that the order of magnitude in
+          terms of the difference between the two samples is a decent amount,
+          and our degrees of freedom of around 22.896 comes from there being
+          around 22-23 participants on average.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h1><sup>07</sup> Summary Statistics</h1>
+      <div class="content">
+        <p>
+          In general, my data was pretty varied, with the means for time on page
+          comparing samples A/B to be around 22000/10000, the medians being
+          20000/10000, and the ranges being 60000/7000; the means for mouse
+          movement comparing samples B/A to be around 6471/2500, the medians
+          being 5500/2000, and the ranges being 17000/1700.
+
+          <br /><br />
+          For both of the continuous categories (those just mentioned), B tended
+          to have lower means and medians, suggesting that the process was sped
+          up by the changes; however, this could also have been affected by the
+          users’ experience in navigating the page by the time they used version
+          B, since the volatility of the data (suggested by range) is much
+          smaller. For the categorical data, the expected values of around 6/6
+          for misclicks in samples A/B, as well as those of around 17/14 for
+          those without misclicks, is pretty close to the actual results for
+          those categories.
+
+          <br /><br />
+          Overall, I collected more data points for sample B (23) than sample A
+          (20), but because there are only three more participants, it’s
+          unlikely to make an extreme difference in the results.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h1><sup>08</sup> Notes</h1>
+      <div class="content">
+        <p>
+          A/B testing was a surprisingly interesting process, and I'm happy that
+          I was able to try it since I had never done it before. Rather than
+          just asking people directly for their (more subjective) opinion while
+          using my page, as I usually do, it was nice to get a more objective
+          view of their experience using data.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
